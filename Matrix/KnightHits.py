@@ -1,3 +1,4 @@
+Print("Enter Knight position on a board")
 cords = input()
 ltrToNbr = ['a','b','c','d','e','f','g','h']
 tbl = [['.'] * 8 for _ in range(8)]
