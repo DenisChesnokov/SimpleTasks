@@ -1,13 +1,20 @@
 n = int(input())
 sqr = [[0] * n for _ in range(n)]
-
+sqr_line = [(i + 1) for i in range(n * n)]
+print(sqr_line)
+str1 = []
 status = 'YES' 
+i, j = 0, 0
 
 # Get square
 for i in range(n):
-    str = input().split()
-    for j in range(n):
-        sqr[i][j] = int(str[j])
+    str1 = input().split()
+    while status == 'YES' and j < n:
+        sqr[i][j] = int(str1[j])
+        if sqr_line.count(sqr[i][j]) > 0:
+            sqr_line[sqr_line.index(sqr[i][j])] = 0
+        else: status = 'NO'
+        j += 1
 
 #create standart Sum 
 sum1 = sum(sqr[0])
